@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://our.company.com/order.schema.json",
+  "title": "Shipment",
+  "description": "Shipment Data for a product",
+  "type": "object",
+  "properties": {
+    "productId": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "customerName": {
+      "type": "string",
+      "pattern": "^[A-Za-z]+ [A-Za-z]+$"
+    },
+    "address": {
+      "type": "string"
+    },
+    "zipCode": {
+      "type": "string",
+      "pattern": "^[0-9]{5}$"
+    },
+    "gift": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "productId",
+    "customerName",
+    "address",
+    "zipCode",
+    "gift"
+  ]
+}
